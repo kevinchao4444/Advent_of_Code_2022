@@ -1,6 +1,6 @@
 import numpy as np
 
-with open("list.txt") as file_name:
+with open("listday1.txt") as file_name:
     array = np.loadtxt(file_name, delimiter=",")
 
 print(array)
