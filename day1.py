@@ -7,12 +7,12 @@ print(array)
 count = 0
 
 
-for i in range(len(array)-1):
+for i in range(len(array)):
+    print(i)
     temp = array[i+1]
-    if (temp > array[i]):
+    if (temp > array[i]): 
         count += 1
 
-print(count)
 
 count = 0
 
