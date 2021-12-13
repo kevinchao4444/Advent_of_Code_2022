@@ -66,9 +66,3 @@ while (len(array2) > 1):
                 count1 += 1 
                 temp2.append(array2[a])
         
-        
-
-
-    
-    
-print(array2)
