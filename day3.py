@@ -1,5 +1,17 @@
 import numpy as np
 
+def binaryToDecimal(binary):
+     
+    binary1 = binary
+    decimal, i, n = 0, 0, 0
+    while(binary != 0):
+        dec = binary % 10
+        decimal = decimal + dec * pow(2, i)
+        binary = binary//10
+        i += 1
+    print(decimal)
+    return decimal
+
 array = []
 with open("listday3.txt") as file_name:
     for line in file_name.readlines():
@@ -29,18 +41,6 @@ for i in range(strlen):
 #print(gamma)
 #print(epsilon)
 
-def binaryToDecimal(binary):
-     
-    binary1 = binary
-    decimal, i, n = 0, 0, 0
-    while(binary != 0):
-        dec = binary % 10
-        decimal = decimal + dec * pow(2, i)
-        binary = binary//10
-        i += 1
-    print(decimal)
-    return decimal
-
 gamma = binaryToDecimal(int(gamma))
 epsilon = binaryToDecimal(int(epsilon))
 
@@ -51,10 +51,10 @@ print(gamma*epsilon)
 array2 = array
 temp = []
 temp2 = []
-strlen2 = len(array2[0])
+
 
 while (len(array2) > 1):
-    for i in range(strlen2):
+    for i in range(len(array2[0])):
         count1 = 0
         count0 = 0
 
@@ -65,13 +65,10 @@ while (len(array2) > 1):
             else:
                 count1 += 1 
                 temp2.append(array2[a])
+        
+        
 
-        if (count0 > count1):
-            array2 = temp
-            print(array2)
-        else:
-            array2 = temp2
-            print(array2)
+
     
     
 print(array2)
