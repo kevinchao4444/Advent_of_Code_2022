@@ -49,20 +49,51 @@ print(gamma*epsilon)
 #----------------------PART 2------------------------------------
 
 array2 = array
-temp = []
-temp2 = []
+count0 = 0
+count1 = 0
+strlen2 = len(array2[0][0])
+
+for i in range(len(array[0])):
+    temp = []
+    temp2 = []
+    for a in range(len(array)):
+
+        if (array2[a][i] == '0'):
+            temp.append(array[a])
+            count0 += 1
+        else:
+            temp2.append(array[a])
+            count1 += 1
+    if (len(array) == 1):
+        print(array)
+        break
+    elif (count0 >= count1):
+        array = temp2
+    else:
+        array = temp
 
 
-while (len(array2) > 1):
-    for i in range(len(array2[0])):
-        count1 = 0
-        count0 = 0
 
-        for a in range(len(array2)):
-            if (array2[a][i] == '0'):
-                count0 += 1
-                temp.append(array2[a])
-            else:
-                count1 += 1 
-                temp2.append(array2[a])
+for i in range(len(array2[0])):
+    temp = []
+    temp2 = []
+    for a in range(len(array2)):
+
+        if (array2[a][i] == '0'):
+            temp.append(array2[a])
+            count0 += 1
+        else:
+            temp2.append(array2[a])
+            count1 += 1
+    if (len(array2) == 1):
+        print(array2)
+        break
+    elif (count1 >= count0):
+        array2 = temp2
+    else:
+        array2 = temp
         
+oxygen = binaryToDecimal(int(array[0]))
+co2 = binaryToDecimal(int(array2[0]))
+
+print(oxygen*co2)
